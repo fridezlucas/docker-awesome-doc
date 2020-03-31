@@ -3,12 +3,11 @@ FROM ubuntu:18.04
 LABEL maintainer="Lucas Fridez <lucas@fridez.dev>"
 
 # Installes dependencies
-RUN add-apt-repository universe multiverse \
-    && apt-get update -y \
+RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
     texlive-full \
-    texlive-xetex texlive-collection-latexrecommended \
-    texlive-science-doc texlive-science \
+    texlive-xetex latex-xcolor \
+    texlive-math-extra \
     texlive-latex-extra \
     texlive-fonts-extra \
     texlive-bibtex-extra \
