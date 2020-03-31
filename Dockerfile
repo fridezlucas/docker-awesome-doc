@@ -5,7 +5,7 @@ LABEL maintainer="Lucas Fridez <lucas@fridez.dev>"
 # Installes dependencies
 RUN apt-get update -y \
     && apt-get install -y apt-transport-https \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y \
     texlive-full \
     texlive-xetex latex-xcolor \
     texlive-math-extra \
