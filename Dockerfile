@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND=noninteractive
-
 LABEL maintainer="Lucas Fridez <lucas@fridez.dev>"
 
 # Installes dependencies
@@ -16,9 +14,7 @@ RUN apt-get update -y \
     fontconfig \
     lmodern \
     libghc-text-icu-dev \
-    zip \
-    && apt-get clean \
-    && apt-get autoclean \
-    && apt-get autoremove
+    zip
+    #&& apt-get clean
 
 WORKDIR /build
