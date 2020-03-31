@@ -3,7 +3,8 @@ FROM ubuntu:18.04
 LABEL maintainer="Lucas Fridez <lucas@fridez.dev>"
 
 # Installes dependencies
-RUN apt-get update -y \
+RUN add-apt-repository universe multiverse \
+    && apt-get update -y \
     && apt-get install -y --no-install-recommends \
     texlive-full \
     texlive-xetex texlive-collection-latexrecommended \
