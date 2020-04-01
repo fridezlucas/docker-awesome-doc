@@ -1,0 +1,13 @@
+image: fridezlucas/awesome-doc
+
+Documentation:
+  tags:
+    - docker
+  script:
+    - plantuml "./**/*.puml"
+    - cd docs/reports/main
+    - pandoc report.md ./chap/*.md --standalone --to latex --pdf-engine xelatex --template thesis --output report.pdf --listings
+    - cd ../../../
+  artifacts:
+    paths:
+      - "docs/reports/main/*.pdf"
