@@ -28,11 +28,13 @@ RUN apt-get update -y \
        libxmlgraphics-commons-java \
     && wget http://security.ubuntu.com/ubuntu/pool/universe/p/plantuml/plantuml_1.2018.13+ds-2_all.deb \
     && dpkg -i plantuml_1.2018.13+ds-2_all.deb \
+    && wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb \
+    && dpkg -i pandoc-2.9.2.1-1-amd64.deb \
     && apt-get -f install -y \
     && apt-get clean
 
 
 # Install cabal and then pandoc + citeproc
-RUN cabal update && cabal install pandoc pandoc-citeproc --force-reinstalls
+# RUN cabal update && cabal install pandoc pandoc-citeproc --force-reinstalls
 
 WORKDIR /build
